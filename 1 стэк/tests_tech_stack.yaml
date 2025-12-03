@@ -1,0 +1,181 @@
+tests:
+  - id: landing_seo_python_team
+    description: SEO-лендинг, команда Python+JS, startup
+    project:
+      kind: landing
+      scale: startup
+      deadline: normal
+      team_skill: python_and_js
+      realtime: false
+      admin_panel: false
+      mobile_needed: false
+      seo_critical: true
+      analytics_needed: false
+      budget: medium
+      long_lived: true
+    expect:
+      backend: "Django (server-side templates)"
+      frontend: "Server-side HTML + немного JS"
+      database: "PostgreSQL"
+      infra: "Docker + простой CI/CD."
+
+  - id: landing_seo_strong_frontend
+    description: SEO-лендинг, сильный фронтенд
+    project:
+      kind: landing
+      scale: startup
+      deadline: normal
+      team_skill: strong_frontend
+      realtime: false
+      admin_panel: false
+      mobile_needed: false
+      seo_critical: true
+      analytics_needed: false
+      budget: medium
+      long_lived: true
+    expect:
+      backend: "Django/FastAPI как headless API"
+      frontend: "React/Vue с SSR"
+      database: "PostgreSQL"
+      infra: "Docker + простой CI/CD."
+
+  - id: shop_startup_with_admin
+    description: Магазин-стартап с админкой
+    project:
+      kind: shop
+      scale: startup
+      deadline: normal
+      team_skill: python_and_js
+      realtime: false
+      admin_panel: true
+      mobile_needed: false
+      seo_critical: false
+      analytics_needed: true
+      budget: medium
+      long_lived: true
+    expect:
+      backend: "Django + Django REST Framework"
+      frontend: "Готовая тема + JS"
+      database: "PostgreSQL"
+      infra: "Docker + простой CI/CD."
+
+  - id: shop_enterprise_with_admin
+    description: Крупный магазин enterprise
+    project:
+      kind: shop
+      scale: enterprise
+      deadline: normal
+      team_skill: mixed
+      realtime: false
+      admin_panel: true
+      mobile_needed: true
+      seo_critical: true
+      analytics_needed: true
+      budget: high
+      long_lived: true
+    expect:
+      backend: "Django + Django REST Framework"
+      frontend: "SPA (React/Vue)"
+      database: "PostgreSQL/Oracle/MySQL"
+      infra: "Kubernetes, полноценный CI/CD, мониторинг."
+
+  - id: saas_startup_realtime
+    description: SaaS c realtime
+    project:
+      kind: saas
+      scale: startup
+      deadline: normal
+      team_skill: python_and_js
+      realtime: true
+      admin_panel: true
+      mobile_needed: true
+      seo_critical: false
+      analytics_needed: true
+      budget: medium
+      long_lived: true
+    expect:
+      backend: "FastAPI (async + WebSocket)"
+      frontend: "Базовый HTML/CSS + немного JS"
+      database: "PostgreSQL"
+      infra: "Docker + простой CI/CD."
+
+  - id: saas_startup_non_realtime
+    description: SaaS без realtime
+    project:
+      kind: saas
+      scale: startup
+      deadline: normal
+      team_skill: python_and_js
+      realtime: false
+      admin_panel: true
+      mobile_needed: true
+      seo_critical: false
+      analytics_needed: true
+      budget: medium
+      long_lived: true
+    expect:
+      backend: "Django + DRF"
+      frontend: "Базовый HTML/CSS + немного JS"
+      database: "PostgreSQL"
+      infra: "Docker + простой CI/CD."
+
+  - id: api_simple
+    description: Простой REST API
+    project:
+      kind: api
+      scale: startup
+      deadline: normal
+      team_skill: mostly_python
+      realtime: false
+      admin_panel: false
+      mobile_needed: false
+      seo_critical: false
+      analytics_needed: false
+      budget: low
+      long_lived: false
+    expect:
+      backend: "FastAPI или DRF"
+      frontend: "Базовый HTML/CSS + немного JS"
+      database: "PostgreSQL"
+      infra: "Docker + простой CI/CD."
+
+  - id: internal_tool_startup
+    description: Внутренний тул
+    project:
+      kind: internal_tool
+      scale: startup
+      deadline: normal
+      team_skill: mostly_python
+      realtime: false
+      admin_panel: true
+      mobile_needed: false
+      seo_critical: false
+      analytics_needed: true
+      budget: medium
+      long_lived: true
+    expect:
+      backend: "Django (admin)"
+      frontend: "Django admin / простые формы"
+      database: "PostgreSQL"
+      infra: "Docker + простой CI/CD."
+
+
+  - id: pet_urgent_default
+    description: Pet-проект срочный
+    project:
+      kind: landing
+      scale: pet
+      deadline: urgent
+      team_skill: unknown
+      realtime: false
+      admin_panel: false
+      mobile_needed: false
+      seo_critical: false
+      analytics_needed: false
+      budget: low
+      long_lived: false
+    expect:
+      backend: "Django (по умолчанию)"
+      frontend: "Базовый HTML/CSS + немного JS"
+      database: "SQLite"
+      infra: "1 VPS, простое логирование."

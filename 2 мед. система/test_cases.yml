@@ -1,0 +1,412 @@
+medical_triage:
+  - name: emergency_breathing_difficulty_adult
+    input:
+      age: adult
+      fever: none
+      pain: mild
+      chest_pain: false
+      breath: true
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: emergency
+
+  - name: emergency_chest_pain_adult
+    input:
+      age: adult
+      fever: mild
+      pain: moderate
+      chest_pain: true
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: emergency
+
+  - name: emergency_confusion_elderly
+    input:
+      age: elderly
+      fever: mild
+      pain: mild
+      chest_pain: false
+      breath: false
+      confusion: true
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: true
+    expected_urgency: emergency
+
+  - name: emergency_head_trauma_with_symptoms
+    input:
+      age: adult
+      fever: high
+      pain: moderate
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: true
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: emergency
+
+  - name: emergency_bleeding
+    input:
+      age: adult
+      fever: none
+      pain: mild
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: true
+      pregnancy: false
+      chronic: false
+    expected_urgency: emergency
+
+  - name: emergency_very_high_fever_infant
+    input:
+      age: infant
+      fever: very_high
+      pain: mild
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: emergency
+
+  - name: emergency_very_high_fever_elderly_chronic
+    input:
+      age: elderly
+      fever: very_high
+      pain: mild
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: true
+    expected_urgency: emergency
+
+  # --- Срочные (urgent) ---
+  - name: urgent_high_fever_child
+    input:
+      age: child
+      fever: high
+      pain: mild
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: urgent
+
+  - name: urgent_high_fever_elderly
+    input:
+      age: elderly
+      fever: high
+      pain: mild
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: urgent
+
+  - name: urgent_high_fever_adult
+    input:
+      age: adult
+      fever: high
+      pain: mild
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: urgent
+
+  - name: urgent_severe_pain_no_red_flags
+    input:
+      age: adult
+      fever: none
+      pain: severe
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: urgent
+
+  - name: urgent_abdominal_pain_moderate
+    input:
+      age: adult
+      fever: mild
+      pain: moderate
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: true
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: urgent
+
+  - name: urgent_rash_with_high_fever
+    input:
+      age: child
+      fever: high
+      pain: mild
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: true
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: urgent
+
+  - name: urgent_rash_with_mild_fever
+    input:
+      age: child
+      fever: mild
+      pain: mild
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: true
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: urgent
+
+  - name: urgent_pregnancy_moderate_pain
+    input:
+      age: adult
+      fever: mild
+      pain: moderate
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: true
+      chronic: false
+    expected_urgency: urgent
+
+  - name: urgent_high_fever_chronic
+    input:
+      age: adult
+      fever: high
+      pain: mild
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: true
+    expected_urgency: urgent
+
+  - name: urgent_dehydration_with_fever
+    input:
+      age: child
+      fever: high
+      pain: mild
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: true
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: urgent
+
+  # --- Плановая консультация (doctor) ---
+  - name: doctor_moderate_pain_no_flags
+    input:
+      age: adult
+      fever: none
+      pain: moderate
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: doctor
+
+  - name: doctor_mild_fever_chronic
+    input:
+      age: adult
+      fever: mild
+      pain: mild
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: true
+    expected_urgency: doctor
+
+  - name: doctor_rash_without_fever
+    input:
+      age: adult
+      fever: none
+      pain: mild
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: true
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: doctor
+
+  - name: doctor_dehydration_without_fever
+    input:
+      age: adult
+      fever: none
+      pain: mild
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: true
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: doctor
+
+  # --- Низкая срочность (home / low_risk) ---
+  - name: home_low_risk_adult_mild_symptoms
+    input:
+      age: adult
+      fever: mild
+      pain: mild
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: home
+
+  - name: home_low_risk_completely_healthy
+    input:
+      age: adult
+      fever: none
+      pain: none
+      chest_pain: false
+      breath: false
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: home
+
+  # --- Конфликтный сценарий (проверка приоритета) ---
+  - name: conflict_low_risk_vs_emergency
+    input:
+      age: adult
+      fever: mild
+      pain: mild
+      chest_pain: false
+      breath: true         # дыхание → emergency
+      confusion: false
+      dehydration: false
+      rash: false
+      abd_pain: false
+      head_trauma: false
+      bleeding: false
+      pregnancy: false
+      chronic: false
+    expected_urgency: emergency
